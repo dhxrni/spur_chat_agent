@@ -19,6 +19,13 @@ export function errorHandler(
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   _next: NextFunction,
 ): void {
+  if (err instanceof SyntaxError && (err as { type?: string }).type === 'entity.parse.failed') {
+    res.status(400).json({
+      error: 'validation_error',
+      message: 'Request body is not valid JSON.',
+    });
+    return;
+  }
   console.error('[errorHandler]', err);
   res.status(500).json({
     error: 'internal_error',
