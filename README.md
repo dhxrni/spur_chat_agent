@@ -164,7 +164,11 @@ The system prompt injects FAQ content by calling `faqRepository.findAll()` on ev
 
 The backend is intended for deployment to [Render](https://render.com) and the frontend to [Vercel](https://vercel.com).
 
-**Live URL:** _To be added once deployed._
+**Live URLs:**
+- Frontend (live app): https://spur-chat-agent-eta.vercel.app
+- Backend API: https://spur-chat-agent-7e46.onrender.com
+
+> **Note:** The backend runs on Render's free tier — the first request after a period of inactivity may take 10–30+ seconds to respond while the instance spins back up. This is expected, not a bug.
 
 Key environment variables to set in the hosting dashboard:
 
